@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Linkanized.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +10,7 @@ namespace Linkanized.Data
             : base(options)
         {
         }
+
+        public DbSet<MainCategoryModel> MainCategories { get; set; }
     }
 }
