@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Linkanized.Models.MainCategoryModel>
-@{
-    ViewData["Title"] = "ListPanel";
-}
+@{ ViewData["Title"] = "ListPanel"; }
 
 <div class="container col-8">
     @foreach (var item in Model)
     {
-        <button class="btn btn-primary col-3" style="height: 120px; margin-bottom: 20px;">@item.Name</button>
-    }
+<a asp-controller="SubCategory" asp-action="ListPanel" asp-route-id="@item.Id">
+    <input type="button" value="@item.Name" class="btn btn-primary col-3" style="height: 120px; margin-bottom: 20px;" />
+</a>}
+
 </div>
