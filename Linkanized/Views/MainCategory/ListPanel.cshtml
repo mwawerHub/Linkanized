@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Linkanized.Models.MainCategoryModel>
+@{
+    ViewData["Title"] = "ListPanel";
+}
+
+<div class="container col-8">
+    @foreach (var item in Model)
+    {
+        <button class="btn btn-primary col-3" style="height: 120px; margin-bottom: 20px;">@item.Name</button>
+    }
+</div>
