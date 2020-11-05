@@ -10,6 +10,9 @@ namespace Linkanized.Controllers
     {
         private readonly ApplicationDbContext _db;
 
+        [BindProperty]
+        public MainCategoryModel Category { get; set; }
+
         public MainCategoryController(ApplicationDbContext db)
         {
             _db = db;
@@ -23,8 +26,21 @@ namespace Linkanized.Controllers
 
         public IActionResult Create()
         {
-            var newCategory = new MainCategoryModel();
-            return View(newCategory);
+            Category = new MainCategoryModel();
+            return View(Category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Save()
+        {
+            if (false == ModelState.IsValid)
+                return View(Category);
+
+            _db.MainCategories.Add(Category);
+            _db.SaveChanges();
+
+            return RedirectToAction("ListPanel");
         }
     }
 }
