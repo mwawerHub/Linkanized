@@ -6,9 +6,9 @@ Linkanized is an ASP .NET Core 3.1 MVC App for store and organize internet resou
 <hr />
 
 ### Main Technologies:
-🔹 ASP .NET Core 3.1 MVC
-🔹 EF Core
-🔹 MSSQL
+🔹 ASP .NET Core 3.1 MVC<br>
+🔹 EF Core<br>
+🔹 MSSQL<br>
 
 <hr />
 
@@ -17,5 +17,5 @@ Linkanized is an ASP .NET Core 3.1 MVC App for store and organize internet resou
 <hr />
 
 ### Main Features:
-🔹 Adding main categories and sub categories for internet resources
+🔹 Adding main categories and sub categories for internet resources<br>
 🔹 Adding links to internet resources in categories with meaningfull names
