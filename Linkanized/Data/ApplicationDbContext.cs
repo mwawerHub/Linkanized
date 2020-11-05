@@ -13,5 +13,6 @@ namespace Linkanized.Data
 
         public DbSet<MainCategoryModel> MainCategories { get; set; }
         public DbSet<SubCategoryModel> SubCategories { get; set; }
+        public DbSet<ResourceModel> Resources { get; set; }
     }
 }
