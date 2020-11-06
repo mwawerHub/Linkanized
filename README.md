@@ -21,6 +21,6 @@ Linkanized is an ASP .NET Core 3.1 MVC App for store and organize internet resou
 🔹 Adding links to internet resources in categories with meaningfull names
 
 ### To Do:
-🔹 Add Controler and view for Resource model
-🔹 Add CRUD operations for Resource model
+🔹 Add Controler and view for Resource model<br>
+🔹 Add CRUD operations for Resource model<br>
 🔹 Work on front-end side of the project
