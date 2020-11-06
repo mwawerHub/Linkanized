@@ -18,7 +18,7 @@ namespace Linkanized.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> ListPanel(int id)
+        public async Task<IActionResult> SubPanel(int id)
         {
             var categories = await _db.SubCategories
                 .Where(c => c.MainCategoryId == id)

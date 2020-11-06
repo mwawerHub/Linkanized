@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Linkanized
 {
@@ -40,10 +41,9 @@ namespace Linkanized
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                throw new NotImplementedException();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -56,7 +56,7 @@ namespace Linkanized
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=MainCategory}/{action=ListPanel}/{id?}");
+                    pattern: "{controller=MainCategory}/{action=MainPanel}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

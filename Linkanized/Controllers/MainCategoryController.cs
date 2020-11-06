@@ -18,7 +18,7 @@ namespace Linkanized.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> ListPanel()
+        public async Task<IActionResult> MainPanel()
         {
             var categories = await _db.MainCategories.ToListAsync();
             return View(categories);
