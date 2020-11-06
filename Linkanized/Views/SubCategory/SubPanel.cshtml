@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<Linkanized.Models.SubCategoryModel>
 
-@{
-    ViewData["Title"] = "ListPanel";
-}
+@{ ViewData["Title"] = "ListPanel"; }
 <div class="container col-8">
     <h1 class="col-8" style="text-align: center; padding: 5px;">@Model.FirstOrDefault().MainCategory.Name </h1>
 </div>
@@ -10,5 +8,7 @@
 <div class="container col-8">
     @foreach (var item in Model)
     {
-        <button class="btn btn-primary col-3" style="height: 120px; margin-bottom: 20px;">@item.Name</button>}
+<a asp-controller="Resources" asp-action="List" asp-route-id="@item.Id">
+    <button class="btn btn-primary col-3" style="height: 120px; margin-bottom: 20px;">@item.Name</button>
+</a>}
 </div>
