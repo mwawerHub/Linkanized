@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "ListPanel";
 }
+<div class="container col-8">
+    <h1 class="col-8" style="text-align: center; padding: 5px;">@Model.FirstOrDefault().MainCategory.Name </h1>
+</div>
 
 <div class="container col-8">
     @foreach (var item in Model)

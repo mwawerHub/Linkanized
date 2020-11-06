@@ -20,7 +20,11 @@ namespace Linkanized.Controllers
 
         public async Task<IActionResult> ListPanel(int id)
         {
-            var categories = await _db.SubCategories.Where(c => c.MainCategoryId == id).ToListAsync();
+            var categories = await _db.SubCategories
+                .Where(c => c.MainCategoryId == id)
+                .Include(c => c.MainCategory)
+                .ToListAsync();
+
             return View(categories);
         }
 
