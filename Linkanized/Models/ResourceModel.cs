@@ -18,5 +18,7 @@ namespace Linkanized.Models
         [Required]
         [DisplayName("Resource Url")]
         public string Url { get; set; }
+
+        public string Description { get; set; }
     }
 }
