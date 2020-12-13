@@ -9,7 +9,7 @@ namespace Linkanized.Models
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Category Name")]
+        [DisplayName("Main Category")]
         public string Name { get; set; }
     }
 }
