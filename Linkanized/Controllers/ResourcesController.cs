@@ -2,6 +2,7 @@
 using Linkanized.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,17 +20,23 @@ namespace Linkanized.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> List(int? id)
         {
-            var resources = await _db.Resources.Include(r => r.MainCategory)
-                                               .Include(r => r.SubCategory)
-                                               .ToListAsync();
-            return View("List", resources);
-        }
+            List<ResourceModel> resources;
+            if (id == null)
+            {
+                resources = await _db.Resources.Include(r => r.MainCategory)
+                                                   .Include(r => r.SubCategory)
+                                                   .ToListAsync();
+            }
+            else
+            {
+                resources = await _db.Resources.Where(r => r.SubCategoryId == id)
+                                                   .Include(r => r.MainCategory)
+                                                   .Include(r => r.SubCategory)
+                                                   .ToListAsync();
+            }
 
-        public async Task<IActionResult> List(int id)
-        {
-            var resources = await _db.Resources.Where(r => r.SubCategoryId == id).ToListAsync();
             return View(resources);
         }
 
