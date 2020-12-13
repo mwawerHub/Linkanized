@@ -21,7 +21,9 @@ namespace Linkanized.Controllers
 
         public async Task<IActionResult> All()
         {
-            var resources = await _db.Resources.ToListAsync();
+            var resources = await _db.Resources.Include(r => r.MainCategory)
+                                               .Include(r => r.SubCategory)
+                                               .ToListAsync();
             return View("List", resources);
         }
 
