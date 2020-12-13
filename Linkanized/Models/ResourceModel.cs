@@ -8,8 +8,19 @@ namespace Linkanized.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public int MainCategoryId { get; set; }
+
+        [Required]
+        [DisplayName("Main Category")]
+        public MainCategoryModel MainCategory { get; set; }
+
+        [Required]
         public int SubCategoryId { get; set; }
+
+        [Required]
+        [DisplayName("Sub Category")]
+        public SubCategoryModel SubCategory { get; set; }
 
         [Required]
         [DisplayName("Friendly Name")]
